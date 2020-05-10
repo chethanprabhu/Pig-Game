@@ -1,0 +1,3 @@
+-> In order to select a selector in JS file we can use query selector and the way we select is same as CSS
+   i.e . for class, # for ids, and element {} for elements. 
+-> We can also extend this query selector to change what we want to do with the selector
