@@ -50,7 +50,12 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
             document.querySelector(".player-"+activePlayer+"-panel").classList.remove("active");
             document.querySelector(".btn-roll").style.display = "none";
             document.querySelector(".btn-hold").style.display = "none";
-            document.querySelector(".dice").style.display = "none";
+
+            if(document.querySelector("#name-0") === "Winner!") {
+                document.querySelector(".dice").src = "left-smile.png";
+            } else {
+                document.querySelector(".dice").src = "right-smile.png";
+            }
         }
 
     } else {
