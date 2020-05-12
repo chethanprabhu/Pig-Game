@@ -22,7 +22,9 @@ roundScore = 0;
 init();
 
 document.querySelector(".btn-new").addEventListener("click", function(){
-    
+    document.querySelector(".btn-roll").style.display = "block";
+    document.querySelector(".btn-hold").style.display = "block";
+    init();
 })
 
 document.querySelector(".btn-roll").addEventListener("click", function(){
