@@ -11,13 +11,11 @@ GAME RULES:
 
 var player1, player2, currentScore, activePlayer, globalScore;
 
-player1 = "Player 1";
-player2 = "Player 2";
 globalScore = [0, 0];
 activePlayer = 0;
 roundScore = 0;
-// player1 = prompt("Enter Player 1 name");
-// player2 = prompt("Enter Player 2 name");
+player1 = prompt("Enter Player 1 name");
+player2 = prompt("Enter Player 2 name");
 
 init();
 
@@ -31,6 +29,7 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
     var dice = Math.floor(Math.random() * 6 + 1);
 
     document.querySelector(".dice").style.display = "block";
+    document.querySelector(".btn-hold").style.display = "block";
     document.querySelector(".dice").src = "dice-" + dice + ".png";
 
     if(dice !== 1) {
@@ -63,6 +62,8 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
     globalScore[activePlayer] += roundScore;
     document.querySelector("#score-" + activePlayer).textContent = globalScore[activePlayer];
     nextPlayer();
+    document.querySelector(".dice").style.display = "none";
+    document.querySelector(".btn-hold").style.display = "none";
 })
 
 function init() {
@@ -73,6 +74,7 @@ function init() {
     document.querySelector("#score-1").textContent = "0";
     document.querySelector("#current-1").textContent = "0"; 
     document.querySelector(".dice").style.display = "none";
+    document.querySelector(".btn-hold").style.display = "none";
     roundScore = 0;
     activePlayer = 0;
     globalScore = [0, 0];
@@ -90,4 +92,6 @@ function nextPlayer() {
 
     document.querySelector(".player-0-panel").classList.toggle("active");
     document.querySelector(".player-1-panel").classList.toggle("active");
+    document.querySelector(".dice").style.display = "none";
+    document.querySelector(".btn-hold").style.display = "none";
 }
