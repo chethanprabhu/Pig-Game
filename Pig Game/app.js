@@ -51,7 +51,7 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
             document.querySelector(".btn-roll").style.display = "none";
             document.querySelector(".btn-hold").style.display = "none";
 
-            if(document.querySelector("#name-0") === "Winner!") {
+            if(document.querySelector("#name-0").textContent === "Winner!") {
                 document.querySelector(".dice").src = "left-smile.png";
             } else {
                 document.querySelector(".dice").src = "right-smile.png";
